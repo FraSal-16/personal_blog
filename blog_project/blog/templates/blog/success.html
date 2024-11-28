@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione Avvenuta con Successo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+</head>
+<body id="body-success">
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="text-center">
+            <h2 id="h2-registrazione">Registrazione Avvenuta con Successo!</h2>
+            <p id="p-registrazione">Verrai reindirizzato automaticamente tra 3 secondi.</p>
+        </div>
+    </div>
+     <script>
+        // Reindirizza alla homepage o a un'altra pagina dopo 3 secondi
+        setTimeout(function() {
+            window.location.href = "{% url 'post_list' %}";
+        }, 3000);
+    </script>
+</body>
+</html>

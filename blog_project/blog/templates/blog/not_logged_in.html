@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nessun Utente Loggato</title>
+    <!-- Includi il CSS di Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body id="body-not_logged_in">
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1>Nessun Utente Loggato</h1>
+            <p>Non sei loggato. Per favore, accedi per continuare.</p>
+            <p id="redirect-message" class="mt-3" style="display: none;"></p>  <!-- Messaggio di reindirizzamento -->
+            <a href="{% url 'login' %}" class="btn btn-primary">Accedi</a>  <!-- Pulsante di accesso -->
+        </div>
+    </div>
+
+    <!-- Includi il JavaScript di Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Aggiungi il reindirizzamento automatico -->
+    <script>
+        var redirectMessage = document.getElementById('redirect-message');
+
+        // Mostra il messaggio di reindirizzamento
+        redirectMessage.textContent = "Verrai reindirizzato alla pagina di login tra 5 secondi...oppure accedi qui sotto...";
+        redirectMessage.style.display = "block";  // Rendi visibile il messaggio
+
+        // Imposta il timer per il reindirizzamento
+        setTimeout(function() {
+            window.location.href = "{% url 'login' %}";  // Reindirizza alla pagina di login dopo 5 secondi
+        }, 5000);  // 5000 millisecondi = 5 secondi
+    </script>
+</body>
+</html>

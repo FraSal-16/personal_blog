@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Lista dei Post</title>
+</head>
+<body id="body-creazione">
+    <h1 style="margin-left:35%; color: red; font-size: 100px;">Lista dei Post</h1>
+    <div class="link-container">
+        <a href="{% url 'post_create' %}" class="link-post">Crea Nuovo Post</a>
+    </div>
+    <ol style="margin-left: 37%;">
+        {% for post in posts %}
+            <li style=" font-size: 30px;">
+                <a style="color: black;font-size: 30px;" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+                <p>Pubblicato il: {{ post.created_at }}</p>
+            </li>
+        {% endfor %}
+    </ol>
+      <form action="{% url 'index' %}" method="get">
+        <button type="submit" class="btn btn-primary">Torna alla Home</button>
+        <style>
+            .btn {
+                background-color: #007BFF; 
+                color: white; 
+                border: none; 
+                padding: 10px 20px; 
+                margin-left: 43%; 
+                margin-bottom: 30px;
+                cursor: pointer; 
+                border-radius: 5px; 
+                font-size: 16px; 
+            }
+    
+            .btn:hover {
+                background-color: #0056b3; 
+            }
+           
+        </style>
+    </form>
+    </div>
+</body>
+</html>

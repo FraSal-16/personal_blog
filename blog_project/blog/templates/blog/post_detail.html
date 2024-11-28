@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>{{ post.title }}</h1>
+        <p><em>Pubblicato il {{ post.created_at }} da {{ post.author }}</em></p>
+        <div>{{ post.content|safe }}</div>
+
+        <hr>
+
+        <!-- Pulsante per aprire la modale di eliminazione -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal">
+            Elimina
+        </button>
+
+        <!-- Pulsante per modificare il post -->
+        <a href="{% url 'post_edit' post.pk %}" class="btn btn-primary">Modifica</a>
+        <a href="{% url 'post_list' %}" class="btn btn-secondary">Torna alla lista</a>
+
+        <!-- Modale di conferma per l'eliminazione -->
+        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmDeleteModalLabel">Conferma Eliminazione</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Sei sicuro di voler eliminare "{{ post.title }}"?
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{% url 'post_delete' post.pk %}" method="post" id="delete-form">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Elimina</button>
+                        </form>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script di jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Script di Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <!-- Script di Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

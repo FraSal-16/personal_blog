@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Benvenuto nel Blog</title>
+</head>
+<body id="body-home">
+    <h1 id="h1">Benvenuto nel Blog!</h1>
+    <p id="p1">Seleziona un'opzione:</p>
+
+    <!-- Modulo per i pulsanti -->
+    <div>
+        <form action="{% url 'post_list' %}" method="get">
+            <button type="submit" class="btn">Visualizza Post</button>
+        </form>
+        <form action="{% url 'post_create' %}" method="get">
+            <button type="submit" class="btn">Crea Nuovo Post</button>
+        </form>
+        <form action="{% url 'login' %}" method="get">
+            <button type="submit" class="btn">Accedi</button>
+        </form>
+        <form action="{% url 'register' %}" method="get">
+            <button type="submit" class="btn">Registrati</button>
+        </form>
+        
+        <form action="{% url 'after_log_out' %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn">Logout</button>
+        </form>
+    </div>
+
+    <style>
+        .btn {
+            background-color: #007BFF;
+            color: white; 
+            border: none;
+            padding: 10px 20px;
+            margin-left: 43%; 
+            margin-bottom: 30px;
+            cursor: pointer; 
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+
+    <!-- Script di jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+    <!-- Script di Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    
+    <!-- Script di Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

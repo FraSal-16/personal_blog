@@ -1,0 +1,120 @@
+#h1 {
+    color:red;
+    text-align: center;
+    margin-top: 3%;   
+    font-size: 120px;
+}
+
+li {
+    margin-left: 2%;
+    font-size: 20px;
+}
+
+#p1 {
+    margin-left: 35%;
+    font-size: 50px;
+}
+
+.link-container {
+    padding-left: 41%; 
+    text-align: left; 
+}
+
+.link-post {
+    display: inline-block; 
+    font-size: larger; 
+    background-color:rgb(23, 144, 224);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; 
+    padding: 15px 55px; 
+    cursor: pointer; 
+    
+}
+
+#body-creazione {
+    background-image: url('../images/strada_innevata.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+#body-registrazione {
+    background-image: url('../images/sunrise-over-snowcapped-mountains-photo2x.png') !important; 
+    background-size: cover !important; 
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
+    height: 100vh !important; 
+}
+
+#body-home {
+    background-image: url('../images/home_blog.jpg') !important;
+    background-size: cover !important; 
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
+    height: 100vh !important; 
+}
+
+#body-login {
+    background-image: url('../images/magazine-3680549_1280\ \(1\).jpg') !important; 
+    background-size: cover !important; 
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
+    height: 100vh !important;
+}
+
+#body-success {
+    background-image: url('../images/sfondo-registrazione.jpg') !important; 
+    background-size: cover !important;
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
+    height: 100vh !important; 
+}
+
+#body-logout {
+    background-image: url('../images/logout.jpg') !important; 
+    background-size: cover !important;
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
+    height: 100vh !important; 
+}
+
+#body-create {
+    background-image: url('../images/create_post.jpg') !important; 
+    background-size: cover !important; 
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
+    height: 100vh !important; 
+}
+
+#body-not_logged_in {
+    background-image: url('../images/not_log_in.jpg') !important; 
+    background-size: cover !important; 
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
+    height: 100vh !important; 
+}
+
+#register{
+    font-size: 25px;
+    font-weight: 900;
+    color: #000000;
+}
+
+#p-register {
+    font-size: 25px;
+    font-weight: 900;
+    color: #000000;
+}
+
+#h2-registrazione {
+    font-size: 25px;
+    font-weight: 900;
+    color: #000000;
+}
+
+#p-registrazione {
+    font-size: 25px;
+    font-weight: 900;
+    color: #000000;
+}
